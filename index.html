@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- Add this to the <head> of your HTML file -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <title>Web Design Mastery | Pet Paradise</title>
+  </head>
+
+  <body class="relative">
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a href="#" class="text-2xl font-bold text-purple-700"
+              >Pet Paradise</a
+            >
+          </div>
+
+          <!-- Mobile Menu Button -->
+          <div class="flex md:hidden">
+            <button
+              id="menu-btn"
+              class="text-purple-700 hover:text-purple-500 focus:outline-none"
+            >
+              <i class="ri-menu-line text-2xl"></i>
+            </button>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex md:items-center md:space-x-8">
+            <!-- Nav Links -->
+            <div class="flex space-x-6">
+              <a
+                href="#home"
+                class="text-gray-700 hover:text-purple-700 font-medium"
+                >Home</a
+              >
+              <a
+                href="#about"
+                class="text-gray-700 hover:text-purple-700 font-medium"
+                >About</a
+              >
+              <a
+                href="#store"
+                class="text-gray-700 hover:text-purple-700 font-medium"
+                >Store</a
+              >
+              <a
+                href="#service"
+                class="text-gray-700 hover:text-purple-700 font-medium"
+                >Services</a
+              >
+              <a
+                href="#contact"
+                class="text-gray-700 hover:text-purple-700 font-medium"
+                >Contact</a
+              >
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex space-x-4">
+              <a href="booking.html"
+                ><button
+                  id="book_now"
+                  class="bg-purple-700 text-white px-5 py-2 rounded-lg hover:bg-purple-600 transition duration-300"
+                >
+                  Book Now
+                </button></a
+              >
+              <button
+                id="login_signup"
+                class="bg-white text-purple-700 border border-purple-700 px-5 py-2 rounded-lg hover:bg-purple-50 transition duration-300"
+              >
+                Log In
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="md:hidden hidden">
+        <div class="px-4 pt-4 pb-6 space-y-4">
+          <a
+            href="#home"
+            class="block text-gray-700 hover:text-purple-700 px-4 py-2 rounded-md"
+            >Home</a
+          >
+          <a
+            href="#about"
+            class="block text-gray-700 hover:text-purple-700 px-4 py-2 rounded-md"
+            >About</a
+          >
+          <a
+            href="#store"
+            class="block text-gray-700 hover:text-purple-700 px-4 py-2 rounded-md"
+            >Store</a
+          >
+          <a
+            href="#service"
+            class="block text-gray-700 hover:text-purple-700 px-4 py-2 rounded-md"
+            >Services</a
+          >
+          <a
+            href="#contact"
+            class="block text-gray-700 hover:text-purple-700 px-4 py-2 rounded-md"
+            >Contact</a
+          >
+          <button
+            id="book_now_mobile"
+            class="block w-full text-left bg-purple-700 text-white px-4 py-2 rounded-lg hover:bg-purple-600"
+          >
+            Book Now
+          </button>
+          <button
+            id="login_signup_mobile"
+            class="block w-full text-left bg-white text-purple-700 border border-purple-700 px-4 py-2 rounded-lg hover:bg-purple-50"
+          >
+            Log In
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- model for login and signup  -->
+    <!-- Login/Signup Modal -->
+    <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+      <div class="flex justify-center items-center min-h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-md max-w-md w-full relative">
+          <!-- Close Button -->
+          <span
+            class="close text-gray-600 text-2xl cursor-pointer absolute top-4 right-4"
+            >&times;</span
+          >
+
+          <!-- Login Form -->
+          <div id="loginForm" class="block">
+            <h2 class="text-2xl font-bold text-purple-900">Log In</h2>
+            <form class="mt-6 space-y-4">
+              <div>
+                <label
+                  for="loginEmail"
+                  class="block text-sm font-medium text-gray-700"
+                  >Email:</label
+                >
+                <input
+                  type="email"
+                  id="loginEmail"
+                  name="email"
+                  placeholder="Enter your email"
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="loginPassword"
+                  class="block text-sm font-medium text-gray-700"
+                  >Password:</label
+                >
+                <input
+                  type="password"
+                  id="loginPassword"
+                  name="password"
+                  placeholder="Enter your password"
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-600 transition duration-300"
+              >
+                Log In
+              </button>
+            </form>
+            <p class="text-gray-600 mt-4">
+              Don't have an account?
+              <a
+                href="#"
+                id="showSignup"
+                class="text-purple-700 hover:text-purple-500"
+                >Sign Up</a
+              >
+            </p>
+          </div>
+
+          <!-- Signup Form -->
+          <div id="signupForm" class="hidden">
+            <h2 class="text-2xl font-bold text-purple-900">Sign Up</h2>
+            <form class="mt-6 space-y-4">
+              <div>
+                <label
+                  for="signupName"
+                  class="block text-sm font-medium text-gray-700"
+                  >Full Name:</label
+                >
+                <input
+                  type="text"
+                  id="signupName"
+                  name="name"
+                  placeholder="Enter your full name"
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signupEmail"
+                  class="block text-sm font-medium text-gray-700"
+                  >Email:</label
+                >
+                <input
+                  type="email"
+                  id="signupEmail"
+                  name="email"
+                  placeholder="Enter your email"
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="signupPassword"
+                  class="block text-sm font-medium text-gray-700"
+                  >Password:</label
+                >
+                <input
+                  type="password"
+                  id="signupPassword"
+                  name="password"
+                  placeholder="Enter your password"
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-600 transition duration-300"
+              >
+                Sign Up
+              </button>
+            </form>
+            <p class="text-gray-600 mt-4">
+              Already have an account?
+              <a
+                href="#"
+                id="showLogin"
+                class="text-purple-700 hover:text-purple-500"
+                >Log In</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header  -->
+    <header id="home" class="bg-purple-100 pt-20 pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <!-- Header Content -->
+          <div class="text-center md:text-left">
+            <h4
+              class="inline-block bg-black bg-opacity-10 text-purple-700 text-sm font-semibold px-4 py-1 rounded-full"
+            >
+              Welcome
+            </h4>
+            <h1 class="text-5xl md:text-6xl font-bold text-purple-900 mt-4">
+              Pet<br /><span class="text-7xl md:text-8xl">Paradise</span>
+            </h1>
+            <h2 class="text-xl font-semibold text-purple-700 mt-4">
+              We love pets like you do :)
+            </h2>
+            <p class="text-gray-600 mt-4 max-w-md mx-auto md:mx-0">
+              From routine check-ups to specialized treatments, we're here to
+              ensure your pets lead happy, healthy lives.
+            </p>
+            <div class="mt-6">
+              <button
+                class="bg-purple-700 text-white px-6 py-2 rounded-full flex items-center gap-2 mx-auto md:mx-0 hover:bg-purple-600 transition duration-300"
+              >
+                Start Here!
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Header Image -->
+          <div class="relative">
+            <img
+              src="assets/header-bg.png"
+              alt="header-bg"
+              class="absolute top-1/2 left-0 transform -translate-y-1/2 w-72 opacity-50"
+            />
+            <img
+              src="assets/header.png"
+              alt="header"
+              class="w-full max-w-md mx-auto"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="bg-white h-12"></div>
+    </header>
+
+    <!-- Intro Section of Website  -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-500 text-lg font-medium">Intro</p>
+        <h2 class="text-4xl font-semibold text-purple-900 mt-2">
+          Get to know us more
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <!-- Intro Card 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="bg-purple-100 p-8 rounded-full inline-block">
+              <img
+                src="assets/intro-1.png"
+                alt="intro"
+                class="w-20 h-20 mx-auto"
+              />
+            </div>
+            <h4 class="text-xl font-semibold text-purple-900 mt-4">
+              Pet Experts
+            </h4>
+            <p class="text-gray-600 mt-2">
+              Meet our team of skilled veterinarians, dedicated to your pet's
+              well-being.
+            </p>
+            <a
+              href="#"
+              class="inline-block mt-4 text-purple-700 border border-purple-700 px-6 py-2 rounded-full hover:bg-purple-700 hover:text-white transition duration-300"
+            >
+              Read More
+            </a>
+          </div>
+
+          <!-- Intro Card 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="bg-blue-100 p-8 rounded-full inline-block">
+              <img
+                src="assets/intro-2.png"
+                alt="intro"
+                class="w-20 h-20 mx-auto"
+              />
+            </div>
+            <h4 class="text-xl font-semibold text-purple-900 mt-4">
+              Vet Services
+            </h4>
+            <p class="text-gray-600 mt-2">
+              Offering a wide range of veterinary services to keep your pets
+              healthy and happy.
+            </p>
+            <a
+              href="#"
+              class="inline-block mt-4 text-blue-700 border border-blue-700 px-6 py-2 rounded-full hover:bg-blue-700 hover:text-white transition duration-300"
+            >
+              Read More
+            </a>
+          </div>
+
+          <!-- Intro Card 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <div class="bg-pink-100 p-8 rounded-full inline-block">
+              <img
+                src="assets/intro-3.png"
+                alt="intro"
+                class="w-20 h-20 mx-auto"
+              />
+            </div>
+            <h4 class="text-xl font-semibold text-purple-900 mt-4">
+              Contact Us
+            </h4>
+            <p class="text-gray-600 mt-2">
+              Reach out to us for any inquiries or schedule an appointment for
+              your pet's care.
+            </p>
+            <a
+              href="#"
+              class="inline-block mt-4 text-pink-700 border border-pink-700 px-6 py-2 rounded-full hover:bg-pink-700 hover:text-white transition duration-300"
+            >
+              Read More
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section of Website  -->
+    <section class="py-16 bg-purple-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-500 text-lg font-medium">About Us</p>
+        <h2 class="text-4xl font-semibold text-purple-900 mt-2">
+          What we can do for you
+        </h2>
+
+        <!-- About Row 1 -->
+        <div class="flex flex-col md:flex-row items-center gap-8 mt-12">
+          <div class="w-full md:w-1/2">
+            <img
+              src="assets/about-1.jpg"
+              alt="about"
+              class="rounded-lg shadow-md"
+            />
+          </div>
+          <div class="w-full md:w-1/2 text-left">
+            <div
+              class="bg-purple-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto md:mx-0"
+            >
+              <img
+                src="assets/about-1-icon.png"
+                alt="about-icon"
+                class="w-10 h-10"
+              />
+            </div>
+            <h4 class="text-2xl font-semibold text-purple-900 mt-4">
+              Let us help you with your pet health
+            </h4>
+            <p class="text-gray-600 mt-2">
+              Our expert veterinarians are here to provide comprehensive care
+              and guidance to ensure your pet stays in perfect health.
+            </p>
+          </div>
+        </div>
+
+        <!-- About Row 2 -->
+        <div class="flex flex-col md:flex-row items-center gap-8 mt-12">
+          <div class="w-full md:w-1/2 text-left order-2 md:order-1">
+            <div
+              class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto md:mx-0"
+            >
+              <img
+                src="assets/about-2-icon.png"
+                alt="about-icon"
+                class="w-10 h-10"
+              />
+            </div>
+            <h4 class="text-2xl font-semibold text-purple-900 mt-4">
+              Caring personal will take care of your pet
+            </h4>
+            <p class="text-gray-600 mt-2">
+              Your pet will be in good hands with our compassionate and
+              well-trained staff, who treat every pet like family.
+            </p>
+          </div>
+          <div class="w-full md:w-1/2 order-1 md:order-2">
+            <img
+              src="assets/about-2.jpg"
+              alt="about"
+              class="rounded-lg shadow-md"
+            />
+          </div>
+        </div>
+
+        <!-- About Row 3 -->
+        <div class="flex flex-col md:flex-row items-center gap-8 mt-12">
+          <div class="w-full md:w-1/2">
+            <img
+              src="assets/about-3.jpg"
+              alt="about"
+              class="rounded-lg shadow-md"
+            />
+          </div>
+          <div class="w-full md:w-1/2 text-left">
+            <div
+              class="bg-pink-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto md:mx-0"
+            >
+              <img
+                src="assets/about-3-icon.png"
+                alt="about-icon"
+                class="w-10 h-10"
+              />
+            </div>
+            <h4 class="text-2xl font-semibold text-purple-900 mt-4">
+              Let us groom your precious and loved pet
+            </h4>
+            <p class="text-gray-600 mt-2">
+              From bathing to styling, we offer professional grooming services
+              to keep your pet looking and feeling their best.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Section of Website  -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-500 text-lg font-medium">Services</p>
+        <h2 class="text-4xl font-semibold text-purple-900 mt-2">
+          What we can do for you
+        </h2>
+        <div class="flex flex-wrap justify-center gap-8 mt-12">
+          <!-- Service Card 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center w-64">
+            <div
+              class="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto"
+            >
+              <img src="assets/service-1.png" alt="service" class="w-12 h-12" />
+            </div>
+            <p class="text-lg font-medium text-purple-900 mt-4">
+              Emergency Care
+            </p>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center w-64">
+            <div
+              class="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto"
+            >
+              <img src="assets/service-2.png" alt="service" class="w-12 h-12" />
+            </div>
+            <p class="text-lg font-medium text-purple-900 mt-4">
+              Vaccination Services
+            </p>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center w-64">
+            <div
+              class="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto"
+            >
+              <img src="assets/service-3.png" alt="service" class="w-12 h-12" />
+            </div>
+            <p class="text-lg font-medium text-purple-900 mt-4">
+              Nutrition Counseling
+            </p>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center w-64">
+            <div
+              class="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto"
+            >
+              <img src="assets/service-4.png" alt="service" class="w-12 h-12" />
+            </div>
+            <p class="text-lg font-medium text-purple-900 mt-4">
+              Behavioral Consultation
+            </p>
+          </div>
+
+          <!-- Service Card 5 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center w-64">
+            <div
+              class="bg-blue-100 w-24 h-24 rounded-full flex items-center justify-center mx-auto"
+            >
+              <img src="assets/service-5.png" alt="service" class="w-12 h-12" />
+            </div>
+            <p class="text-lg font-medium text-purple-900 mt-4">
+              Pet Boarding Services
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store Section of Website  -->
+    <section class="py-16 bg-yellow-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-500 text-lg font-medium">Products</p>
+        <h2 class="text-4xl font-semibold text-purple-900 mt-2">
+          Featured pet products
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <!-- Product Card 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <img
+              src="assets/product-1.jpg"
+              alt="product"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <h4 class="text-xl font-semibold text-purple-900 mt-4">
+              Dog Trash Bag
+            </h4>
+            <p class="text-gray-600 mt-2">
+              Convenient and eco-friendly trash bags for easy pet waste
+              disposal.
+            </p>
+            <h3 class="text-xl font-bold text-purple-900 mt-4">$29.00 USD</h3>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <img
+              src="assets/product-2.jpg"
+              alt="product"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <h4 class="text-xl font-semibold text-purple-900 mt-4">
+              Pet Accessories
+            </h4>
+            <p class="text-gray-600 mt-2">
+              Explore our range of stylish and functional accessories for your
+              furry friends.
+            </p>
+            <h3 class="text-xl font-bold text-purple-900 mt-4">$49.00 USD</h3>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md text-center">
+            <img
+              src="assets/product-3.jpg"
+              alt="product"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <h4 class="text-xl font-semibold text-purple-900 mt-4">Dog Food</h4>
+            <p class="text-gray-600 mt-2">
+              Nutritious and delicious dog food to keep your pet healthy and
+              happy.
+            </p>
+            <h3 class="text-xl font-bold text-purple-900 mt-4">$79.00 USD</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Section of Website  -->
+    <section class="py-16 bg-purple-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p class="text-gray-500 text-lg font-medium">Testimonials</p>
+        <h2 class="text-4xl font-semibold text-purple-900 mt-2">
+          What people say about us
+        </h2>
+        <div class="mt-12">
+          <!-- Swiper Container -->
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="bg-white p-6 rounded-lg shadow-md text-left">
+                  <div class="flex items-center gap-4">
+                    <img
+                      src="assets/client-1.jpg"
+                      alt="client"
+                      class="w-12 h-12 rounded-full"
+                    />
+                    <div>
+                      <h4 class="text-lg font-semibold text-purple-900">
+                        Sarah Johnson
+                      </h4>
+                      <h5 class="text-gray-500">Graphic Designer</h5>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mt-4">
+                    The care my dog received at Pet Paradise was exceptional.
+                    The vets were attentive and cared about my dog's well-being.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="bg-white p-6 rounded-lg shadow-md text-left">
+                  <div class="flex items-center gap-4">
+                    <img
+                      src="assets/client-2.jpg"
+                      alt="client"
+                      class="w-12 h-12 rounded-full"
+                    />
+                    <div>
+                      <h4 class="text-lg font-semibold text-purple-900">
+                        Michael Adams
+                      </h4>
+                      <h5 class="text-gray-500">Software Engineer</h5>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mt-4">
+                    Pet Paradise saved my cat during an emergency! Their quick
+                    response and expertise made all the difference.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="bg-white p-6 rounded-lg shadow-md text-left">
+                  <div class="flex items-center gap-4">
+                    <img
+                      src="assets/client-3.jpg"
+                      alt="client"
+                      class="w-12 h-12 rounded-full"
+                    />
+                    <div>
+                      <h4 class="text-lg font-semibold text-purple-900">
+                        Emily Martinez
+                      </h4>
+                      <h5 class="text-gray-500">Teacher</h5>
+                    </div>
+                  </div>
+                  <p class="text-gray-600 mt-4">
+                    I trust Pet Paradise with all my pets. Their team is
+                    professional, and they always go the extra mile for their
+                    patients.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Section of Website -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <p
+          class="inline-block bg-purple-100 text-purple-700 text-sm font-medium px-6 py-2 rounded-full"
+        >
+          FOLLOW
+        </p>
+        <h2 class="text-4xl font-semibold text-purple-900 mt-2">Instagram</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+          <img
+            src="assets/instagram-1.jpg"
+            alt="instagram"
+            class="w-full h-48 object-cover rounded-lg"
+          />
+          <img
+            src="assets/instagram-2.jpg"
+            alt="instagram"
+            class="w-full h-48 object-cover rounded-lg"
+          />
+          <img
+            src="assets/instagram-3.jpg"
+            alt="instagram"
+            class="w-full h-48 object-cover rounded-lg"
+          />
+          <img
+            src="assets/instagram-4.jpg"
+            alt="instagram"
+            class="w-full h-48 object-cover rounded-lg"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- footer with contact details  -->
+    <footer class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <!-- Footer Column 1: Logo -->
+          <div class="text-center md:text-left">
+            <div class="footer__logo">
+              <a href="#" class="text-2xl font-bold text-purple-700"
+                >Pet Paradise</a
+              >
+            </div>
+          </div>
+
+          <!-- Footer Column 2: Company Links -->
+          <div class="text-center md:text-left">
+            <h4 class="text-lg font-semibold text-purple-900">Company</h4>
+            <ul class="mt-4 space-y-2">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700">Home</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >Store</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700">Faq</a>
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Footer Column 3: Address & Inquiries -->
+          <div class="text-center md:text-left">
+            <h4 class="text-lg font-semibold text-purple-900">Address</h4>
+            <ul class="mt-4 space-y-2">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >New Delhi, India</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >View on Maps</a
+                >
+              </li>
+            </ul>
+            <br />
+            <h4 class="text-lg font-semibold text-purple-900">Inquiries</h4>
+            <ul class="mt-4 space-y-2">
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >+91 0987654321</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-gray-600 hover:text-purple-700"
+                  >info@website.com</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Footer Column 4: Newsletter & Social Media -->
+          <div class="text-center md:text-left">
+            <h4 class="text-lg font-semibold text-purple-900">Newsletter</h4>
+            <p class="text-gray-600 mt-4">Stay updated with our latest news</p>
+            <form class="mt-4 flex items-center">
+              <input
+                type="text"
+                placeholder="Your email"
+                class="w-full px-4 py-2 border border-purple-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <button
+                type="submit"
+                class="bg-purple-700 text-white px-4 py-2 rounded-r-lg hover:bg-purple-600 transition duration-300"
+              >
+                <i class="ri-arrow-right-line"></i>
+              </button>
+            </form>
+            <br />
+            <h4 class="text-lg font-semibold text-purple-900">Follow Us</h4>
+            <div class="flex justify-center md:justify-start space-x-4 mt-4">
+              <a href="#" class="text-purple-700 hover:text-purple-500">
+                <i class="ri-facebook-fill text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-700 hover:text-purple-500">
+                <i class="ri-twitter-fill text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-700 hover:text-purple-500">
+                <i class="ri-youtube-fill text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-700 hover:text-purple-500">
+                <i class="ri-pinterest-line text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-700 hover:text-purple-500">
+                <i class="ri-instagram-line text-2xl"></i>
+              </a>
+              <a href="#" class="text-purple-700 hover:text-purple-500">
+                <i class="ri-tiktok-fill text-2xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bar -->
+        <div class="text-center mt-12 border-t border-gray-200 pt-8">
+          <p class="text-gray-500">
+            Copyright © 2024 Web Design Mastery. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <script src="auth.js"></script>
+  </body>
+</html>
