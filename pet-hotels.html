@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Pet Hotels & Daycares | Pet Paradise</title>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-lg fixed w-full z-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <div class="flex-shrink-0">
+            <a href="index.html" class="text-2xl font-bold text-purple-700"
+              >Pet Paradise</a
+            >
+          </div>
+
+          <!-- Nav Links -->
+          <div class="hidden md:flex md:items-center md:space-x-8">
+            <a
+              href="index.html"
+              class="text-gray-700 hover:text-purple-700 font-medium"
+              >Home</a
+            >
+            <a href="pet-hotels.html" class="text-purple-700 font-medium"
+              >Pet Hotels & Daycares</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Pet Hotels and Daycares Section -->
+    <section class="pt-24 pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-purple-900 text-center">
+          Pet Hotels & Daycares
+        </h2>
+        <p class="text-gray-600 text-center mt-2">
+          Find the best pet hotels and daycares near you.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="mt-8 max-w-2xl mx-auto">
+          <input
+            type="text"
+            placeholder="Search for pet hotels or daycares..."
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+          />
+        </div>
+
+        <!-- List of Pet Hotels and Daycares -->
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Hotel/Daycare Card 1 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <img
+              src="assets/hotel-1.jpg"
+              alt="hotel"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <h3 class="text-xl font-semibold text-purple-900 mt-4">
+              Happy Paws Hotel
+            </h3>
+            <p class="text-gray-600 mt-2">
+              A luxurious hotel for your pets with 24/7 care.
+            </p>
+
+            <a href="booking.html">
+              <button
+                class="w-full bg-purple-700 text-white px-6 py-3 rounded-lg mt-4 hover:bg-purple-600 transition duration-300"
+              >
+                Book Now
+              </button>
+            </a>
+          </div>
+
+          <!-- Hotel/Daycare Card 2 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <img
+              src="assets/hotel-2.jpg"
+              alt="hotel"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <h3 class="text-xl font-semibold text-purple-900 mt-4">
+              Pawfect Daycare
+            </h3>
+            <p class="text-gray-600 mt-2">
+              A fun and safe daycare for your furry friends.
+            </p>
+            <a href="booking.html">
+              <button
+                class="w-full bg-purple-700 text-white px-6 py-3 rounded-lg mt-4 hover:bg-purple-600 transition duration-300"
+              >
+                Book Now
+              </button>
+            </a>
+          </div>
+
+          <!-- Hotel/Daycare Card 3 -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <img
+              src="assets/hotel-3.jpg"
+              alt="hotel"
+              class="w-full h-48 object-cover rounded-lg"
+            />
+            <h3 class="text-xl font-semibold text-purple-900 mt-4">
+              Furry Friends Resort
+            </h3>
+            <p class="text-gray-600 mt-2">
+              A resort-style stay for your pets with premium amenities.
+            </p>
+            <a href="booking.html">
+              <button
+                class="w-full bg-purple-700 text-white px-6 py-3 rounded-lg mt-4 hover:bg-purple-600 transition duration-300"
+              >
+                Book Now
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
