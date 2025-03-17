@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>temp</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Pet Daycare Booking Section -->
+    <section class="py-16 bg-purple-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold text-purple-900">Book a Pet Daycare</h2>
+        <p class="text-gray-600 mt-2">
+          Find the best daycare for your pet and book a spot today!
+        </p>
+
+        <!-- Booking Form -->
+        <div class="mt-8 bg-white p-8 rounded-lg shadow-md max-w-2xl mx-auto">
+          <form class="space-y-6">
+            <!-- Pet Name -->
+            <div>
+              <label
+                for="petName"
+                class="block text-sm font-medium text-gray-700"
+                >Pet's Name:</label
+              >
+              <input
+                type="text"
+                id="petName"
+                name="petName"
+                placeholder="Enter your pet's name"
+                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                required
+              />
+            </div>
+
+            <!-- Pet Type -->
+            <div>
+              <label
+                for="petType"
+                class="block text-sm font-medium text-gray-700"
+                >Pet Type:</label
+              >
+              <input
+                type="text"
+                id="petType"
+                name="petType"
+                placeholder="e.g., Dog, Cat"
+                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                required
+              />
+            </div>
+
+            <!-- Booking Date -->
+            <div>
+              <label
+                for="bookingDate"
+                class="block text-sm font-medium text-gray-700"
+                >Booking Date:</label
+              >
+              <input
+                type="date"
+                id="bookingDate"
+                name="bookingDate"
+                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-purple-500 focus:border-purple-500"
+                required
+              />
+            </div>
+
+            <!-- Submit Button -->
+            <div>
+              <button
+                type="submit"
+                class="w-full bg-purple-700 text-white px-6 py-3 rounded-lg hover:bg-purple-600 transition duration-300"
+              >
+                Book Now
+              </button>
+            </div>
+          </form>
+
+          <!-- Link to Pet Hotels and Daycares Page -->
+          <p class="text-gray-600 mt-6">
+            Looking for more options?
+            <a
+              href="pet-hotels.html"
+              class="text-purple-700 hover:text-purple-500"
+              >Search and book pet hotels and daycares</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
